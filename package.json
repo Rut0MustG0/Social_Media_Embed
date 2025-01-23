@@ -1,5 +1,5 @@
 {
-  "name": "react-social-media-embe",
+  "name": "react-social-media-embed",
   "version": "2.5.17",
   "coreVersion": "3.0.9",
   "author": "Justin Mahar <contact@justinmahar.com>",
@@ -8,7 +8,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "rm -rf ./dist && tsc && node ./test/1.js",
+    "build": "rm -rf ./dist && tsc && node ./src/components/embeds/whatsapp.js",
     "test": "npm run build",
     "start": "npm run storybook",
     "storybook": "storybook dev -p 6006",
@@ -84,6 +84,7 @@
     "@types/youtube-player": "^5.5.5",
     "classnames": "^2.5.1",
     "react-html-props": "^2.0.3",
+    "react-social-media-embe": "github:Rut0MustG0/Social_Media_Embed",
     "react-social-media-embed": "github:Rut0MustG0/Social_Media_Embed",
     "react-sub-unsub": "^2.2.1",
     "react-twitter-embed": "^4.0.4",
