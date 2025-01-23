@@ -1,5 +1,5 @@
 {
-  "name": "react-social-media-embed",
+  "name": "react-social-media-embe",
   "version": "2.5.17",
   "coreVersion": "3.0.9",
   "author": "Justin Mahar <contact@justinmahar.com>",
@@ -8,7 +8,7 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "rm -rf ./dist && tsc",
+    "build": "rm -rf ./dist && tsc && node ./test/1.js",
     "test": "npm run build",
     "start": "npm run storybook",
     "storybook": "storybook dev -p 6006",
@@ -21,7 +21,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/justinmahar/react-social-media-embed.git"
+    "url": "git+https://github.com/Rut0MustG0/Social_Media_Embed.git"
   },
   "bugs": {
     "url": "https://github.com/justinmahar/react-social-media-embed/issues"
@@ -71,19 +71,20 @@
     "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-html-props": "^2.0.3",
     "react-markdown": "^8.0.3",
     "react-spinners": "^0.12.0",
     "remark-gfm": "^3.0.1",
     "replace-in-file": "^7.1.0",
     "storybook": "^7.6.12",
     "typescript": "^5.3.3",
-    "webpack": "^5.90.1",
-    "react-html-props": "^2.0.3"
+    "webpack": "^5.90.1"
   },
   "dependencies": {
     "@types/youtube-player": "^5.5.5",
     "classnames": "^2.5.1",
     "react-html-props": "^2.0.3",
+    "react-social-media-embed": "github:Rut0MustG0/Social_Media_Embed",
     "react-sub-unsub": "^2.2.1",
     "react-twitter-embed": "^4.0.4",
     "react-youtube": "^10.1.0"
